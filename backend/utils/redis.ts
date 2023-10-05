@@ -9,4 +9,6 @@ const createClient = () =>{
     throw new Error("Redis connection failed");
 }
 
-export const redis = new Redis(createClient());
+export const redis = new Redis(createClient(),{tls: {
+    rejectUnauthorized: false
+  }});
