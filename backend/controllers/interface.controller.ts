@@ -19,3 +19,8 @@ export interface ILoginRequest{
     email:string;
     password:string;
 }
+
+export interface IMail{
+    email:string;
+    name:string;
+}

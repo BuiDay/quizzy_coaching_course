@@ -6,17 +6,19 @@ import dynamic from 'next/dynamic';
 const ThemeSwitcher = dynamic(()=>import("../utils/ThemeSwitcher"),{ssr:false})
 
 import {HiOutlineMenuAlt3, HiOutlineUserCircle} from 'react-icons/hi'
+import CustomModal from '../utils/CustomModal';
+import Login from './Auth/Login';
 type Props = {
     open:boolean;
-    setOpen:(open:boolean)=>void;
+    setOpen:(open:boolean)=>boolean;
     activeItem:number;
+    route:string;
+    setRoute:(route:string)=>void
 }
 
-const Header:FC<Props> = (props) => {
+const Header:FC<Props> = ({open,setOpen,activeItem,route,setRoute}) => {
     const [active, setActive] = useState(false);
-    const [activeItem, setActiveItem] = useState(0)
     const [openSidebar, setOpenSidebar] = useState(false);
-    const [open, setOpen] = useState(false);
 
     if(typeof window !== "undefined"){
         window.addEventListener('scroll',()=>{
@@ -93,6 +95,19 @@ const Header:FC<Props> = (props) => {
                         )
                     }
                 </div>
+            </div>
+            <div>
+                {
+                    route === 'Login' && (
+                        <>
+                        {
+                            open && (
+                                <CustomModal open={open} setOpen={setOpen} setRoute={setRoute} activeItem={activeItem} component={Login}/>
+                            )
+                        }
+                        </>
+                    )
+                }
             </div>
         </div>
     );

@@ -1,0 +1,42 @@
+# Use root/example as user/password credentials
+version: '3.8'
+
+services:
+
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      DB_URL: "mongodb+srv://buivanduynhat:A3Wph7k31DvBhji0@quizzylms.nuo7tkf.mongodb.net/"
+      # DB_HOST: host.docker.internal
+    ports:
+     - 8080:8080
+    expose:
+     - 8080
+  
+  nextjs:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    expose:
+     - 3000
+    restart: always
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    links:
+      - nextjs
+    volumes:
+    -  ../frontend/.next:/usr/share/nginx/html
+    # - ./nginx/default.conf:/etc/nginx/nginx.conf/default.conf
+
+     #kill -9 <process id>
+          #docker compose -p tmsky-nodejs-mysql up -d

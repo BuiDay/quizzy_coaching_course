@@ -23,7 +23,7 @@ export const registrationUser = CatchAsyncError(
                 return next(new ErrorHandler("Email already exist", 400));
             }
 
-            const user: IRegistrationBody = { name, email, password };
+            const user: IRegistrationBody = { name, email, password }; 
 
             const activationToken = createActivationToken(user);
             const activationCode = activationToken.activationCode;
