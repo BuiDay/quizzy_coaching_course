@@ -10,16 +10,17 @@ interface IProps {
 }
 
 const schema = Yup.object().shape({
+    name:Yup.string().required("Please enter your name!"),
     email: Yup.string().email("Invalid email").required("Please enter your email!"),
     password: Yup.string().required("Please enter your password!").min(6)
 })
 
-const Login: React.FC<IProps> = ({setRoute}) => {
+const Sign_Up: React.FC<IProps> = ({setRoute}) => {
     const [show, setShow] = useState(false)
     const formik = useFormik({
-        initialValues: { email: "", password: "" },
+        initialValues: {name:"", email: "", password: "" },
         validationSchema: schema,
-        onSubmit: async ({ email, password }) => {
+        onSubmit: async ({ name,email, password }) => {
             console.log(email, password)
         }
     })
@@ -28,9 +29,20 @@ const Login: React.FC<IProps> = ({setRoute}) => {
     return (
         <div className='w-full'>
             <h1 className={`${style.title}`}>
-                Login with Elearning
+                Join with Elearning
             </h1>
             <form onSubmit={handleSubmit}>
+            <label htmlFor="name" className={`${style.label}`}>
+                    Enter your name
+                </label>
+                <input type="text" name='' value={values.name} onChange={handleChange} id="name" placeholder='ABC'
+                    className={`${errors.name && touched.name && "border-red-500"} ${style.input}`}
+                />
+                {
+                    errors.name && touched.name && (
+                        <span className='text-red-500 pt-2 block'>{errors.name}</span>
+                    )
+                }
                 <label htmlFor="email" className={`${style.label}`}>
                     Enter your email
                 </label>
@@ -63,7 +75,7 @@ const Login: React.FC<IProps> = ({setRoute}) => {
                     }
                 </div>
                 <div className='w-full mt-5'>
-                    <input type="submit" value="Login" className={`${style.button}`}/>
+                    <input type="submit" value="Login" className={`${style.button}`} onClick={()=>setRoute("Verification")}/>
                 </div>
                 <br />
                 <h5 className='text-center pt-4 font-Poppins text-[14px] text-black dark:text-white'>
@@ -74,10 +86,10 @@ const Login: React.FC<IProps> = ({setRoute}) => {
                     <AiFillGithub size={30} className="cursor-pointer ml-2 dark:text-white"/>
                 </div>
                 <h5 className='text-center pt-4 font-Poppins text-[14px] dark:text-white'>
-                    Not have any account?{""}
+                    Already have an account?{""}
                     <span className='text-[#2190ff] pl-1 cursor-pointer'
-                        onClick={()=>setRoute("Sign-Up")}>
-                        Sign up
+                        onClick={()=>setRoute("Login")}>
+                        Sign in
                     </span>
                 </h5>
             </form>
@@ -85,4 +97,4 @@ const Login: React.FC<IProps> = ({setRoute}) => {
     );
 };
 
-export default Login;
+export default Sign_Up;

@@ -8,6 +8,8 @@ const ThemeSwitcher = dynamic(()=>import("../utils/ThemeSwitcher"),{ssr:false})
 import {HiOutlineMenuAlt3, HiOutlineUserCircle} from 'react-icons/hi'
 import CustomModal from '../utils/CustomModal';
 import Login from './Auth/Login';
+import Sign_Up from './Auth/Sign_Up';
+import Verification from './Auth/Verification';
 type Props = {
     open:boolean;
     setOpen:(open:boolean)=>boolean;
@@ -66,7 +68,6 @@ const Header:FC<Props> = ({open,setOpen,activeItem,route,setRoute}) => {
                             </div>
                             <HiOutlineUserCircle
                                      className=" hidden 1000px:block cursor-pointer dark:text-white text-black"
-                                     fill="white"
                                      size={25}
                                      onClick={() => setOpen(true)}
                                 />
@@ -103,6 +104,28 @@ const Header:FC<Props> = ({open,setOpen,activeItem,route,setRoute}) => {
                         {
                             open && (
                                 <CustomModal open={open} setOpen={setOpen} setRoute={setRoute} activeItem={activeItem} component={Login}/>
+                            )
+                        }
+                        </>
+                    )
+                }
+                {
+                    route === 'Sign-Up' && (
+                        <>
+                        {
+                            open && (
+                                <CustomModal open={open} setOpen={setOpen} setRoute={setRoute} activeItem={activeItem} component={Sign_Up}/>
+                            )
+                        }
+                        </>
+                    )
+                }
+                {
+                    route === 'Verification' && (
+                        <>
+                        {
+                            open && (
+                                <CustomModal open={open} setOpen={setOpen} setRoute={setRoute} activeItem={activeItem} component={Verification}/>
                             )
                         }
                         </>
