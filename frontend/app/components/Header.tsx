@@ -12,7 +12,7 @@ import Sign_Up from './Auth/Sign_Up';
 import Verification from './Auth/Verification';
 type Props = {
     open:boolean;
-    setOpen:(open:boolean)=>boolean;
+    setOpen:(open:boolean)=>any;
     activeItem:number;
     route:string;
     setRoute:(route:string)=>void

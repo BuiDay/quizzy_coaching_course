@@ -40,7 +40,6 @@ export const sendToken = (user: IUser, statusCode: number, res:Response) => {
 
     //parse enviroment variables to integrates with fallback values
  
-
     if(process.env.NODE_ENV === "production"){
         accessTokenOptions.secure = true
     }

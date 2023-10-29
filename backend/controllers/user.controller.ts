@@ -138,7 +138,6 @@ export const logoutUser = CatchAsyncError(
     }
 );
 
-
 export const updateAccessToken = CatchAsyncError(
     async (req: Request, res: Response, next: NextFunction) => {
         try { 
@@ -181,3 +180,6 @@ export const getUserById = CatchAsyncError(
         }
     }
 );
+
+
+
