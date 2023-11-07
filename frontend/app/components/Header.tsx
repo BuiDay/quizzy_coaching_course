@@ -1,15 +1,19 @@
 'use client'
 import Link from 'next/link';
-import React, { FC, use, useState } from 'react';
+import React, { FC, use, useEffect, useState } from 'react';
 import NavItems from '../utils/NavItems';
 import dynamic from 'next/dynamic';
 const ThemeSwitcher = dynamic(()=>import("../utils/ThemeSwitcher"),{ssr:false})
-
+import Image from 'next/image';
 import {HiOutlineMenuAlt3, HiOutlineUserCircle} from 'react-icons/hi'
 import CustomModal from '../utils/CustomModal';
 import Login from './Auth/Login';
 import Sign_Up from './Auth/Sign_Up';
 import Verification from './Auth/Verification';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
+import avatar from '../../public/default_avatar.png'
+
 type Props = {
     open:boolean;
     setOpen:(open:boolean)=>any;
@@ -21,6 +25,7 @@ type Props = {
 const Header:FC<Props> = ({open,setOpen,activeItem,route,setRoute}) => {
     const [active, setActive] = useState(false);
     const [openSidebar, setOpenSidebar] = useState(false);
+    const {user} = useSelector((state:RootState)=>state.auth)
 
     if(typeof window !== "undefined"){
         window.addEventListener('scroll',()=>{
@@ -66,11 +71,22 @@ const Header:FC<Props> = ({open,setOpen,activeItem,route,setRoute}) => {
                                      onClick={() => setOpenSidebar(true)}
                                 />
                             </div>
-                            <HiOutlineUserCircle
+                           {
+                            user ? 
+                            <>
+                                <Link href={'/profile'}>
+                                    <Image src={user?.avatar ? user?.avatar : avatar} alt='avatar' height={20} width={20}/>
+                                </Link>
+
+                            </> : 
+                            <>
+                             <HiOutlineUserCircle
                                      className=" hidden 1000px:block cursor-pointer dark:text-white text-black"
                                      size={25}
                                      onClick={() => setOpen(true)}
                                 />
+                            </>
+                            }
                         </div>
                     </div>
                 </div>

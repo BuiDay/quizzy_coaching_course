@@ -1,7 +1,7 @@
 import express from 'express';
 import { registrationUser,activateUser, loginUser,logoutUser,getUserById,updateAccessToken } from '../controllers/user.controller';
 import { isAuthenticated } from '../middleware/isAuth';
-import { collectionMail } from '../controllers/mail.controller';
+import { collectionMail, getCollectionMail } from '../controllers/mail.controller';
 const router = express.Router();
 
 router.post('/registration',registrationUser)
@@ -17,5 +17,9 @@ router.get('/refresh-token',updateAccessToken)
 router.get('/get-user-by-id',isAuthenticated, getUserById)
 
 router.post('/collection-mail', collectionMail)
+
+router.get('/get-collection-mail', getCollectionMail)
+
+router.put('/update-user-info',isAuthenticated, getCollectionMail)
 
 export default router

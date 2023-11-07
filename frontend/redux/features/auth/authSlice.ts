@@ -1,23 +1,39 @@
-import {createSlice} from "@reduxjs/toolkit"
-const initialState = {
+import {PayloadAction, createSlice} from "@reduxjs/toolkit";
+
+interface IUser{
+    courses?:[],
+    email?:string,
+    isVerified?:boolean,
+    name?:string,
+    role?:string,
+    _id?:string,
+    avatar?:string,
+}
+
+interface IinitialState{
+    token:string,
+    user?:IUser
+}
+
+const initialState:IinitialState = {
     token: "",
-    user: ""
+    user: undefined,
 };
 
 const authSilce = createSlice({
     name:"auth",
     initialState,
     reducers:{
-        userRegistration:(state, action)=>{
+        userRegistration:(state, action:PayloadAction<{token:string}>)=>{
             state.token = action.payload.token;
         },
-        userLoggedIn:(state, action)=>{
-            state.token = action.payload.token;
+        userLoggedIn:(state, action:PayloadAction<{accessToken:string,user:IUser}>)=>{
+            state.token = action.payload.accessToken;
             state.user = action.payload.user;
         },
-        userLoggedOut:(state, action)=>{
+        userLoggedOut:(state)=>{
             state.token = "";
-            state.user = "";
+            state.user = undefined;
         }
     }
 })

@@ -21,8 +21,6 @@ const Sign_Up: React.FC<IProps> = ({ setRoute }) => {
     const [show, setShow] = useState(false);
     const [register, { isError, isSuccess, data, isLoading }] = useRegisterMutation();
 
-    console.log(isError, isSuccess, data, isLoading)
-
     useEffect(() => {
         if (isSuccess) {
             const messeage = data?.message || "Registation successfull!"

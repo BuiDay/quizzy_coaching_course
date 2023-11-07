@@ -2,16 +2,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { BiSearch } from 'react-icons/bi';
-
+import { motion } from "framer-motion";
 
 const Hero = () => {
     return (
-        <div className='w-full 1000px:flex items-center'>
+        <div className='w-full 1000px:flex items-center overflow-hidden'>
             <div className="hero absolute top-[100px] 1000px:top-[unset] 1500px:h-[700px] 1500px:w-[700px] 1100px:h-[600px] 1100px:w-[600px] h-[50vh] w-[50vh] hero_animation rounded-full ml-[50px] "></div>
             <div className='1000px:w-[40%] flex 1000px:min-h-[90vh] items-center justify-center pt-[70px] 1000px:pt-[0] z-10'>
                 <Image src={require("../../../public/hero.png")} alt="" className='object-contain 1100px:max-w-[80%] w-[70%] 1500px:max-w-[85%] h-[auto] z-[10]'/> 
             </div>
-            <div className='1000px:w-[60%] flex flex-col items-center 1000px:mt-[0px] text-center 1000px:text-left mt-[150px]'>
+            <motion.div className='1000px:w-[60%] flex flex-col items-center 1000px:mt-[0px] text-center 1000px:text-left mt-[150px]' 
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.3,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: "spring",
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001
+                  }
+                }}
+            >
                 <h2 className='dark:text-white text-[#000000c7] text-[30px] px-3 w-full 1000px:text-[70px] font-[600] font-Josefin py-2 1000px:leading-[75px] 1500px:w-[600px] typewriter'>
                     Improve Your online Learning Experience Better Instantly
                 </h2>
@@ -47,7 +60,7 @@ const Hero = () => {
                         </Link>{""}
                     </p>
                 </div>
-            </div>
+            </motion.div>
             <br/>
         </div>
     );

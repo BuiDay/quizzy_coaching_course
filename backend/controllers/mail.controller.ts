@@ -29,3 +29,25 @@ export const collectionMail = CatchAsyncError(
         }
     }
 );
+
+export const getCollectionMail = CatchAsyncError(
+    async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const page = 1, limit = 100;
+            const emails = await mailModel.find()
+            .limit(limit * 1)
+            .skip((page - 1) * limit)
+            .exec();;
+            const count = await mailModel.count();
+            res.status(200).json({
+                success: true,
+                totalMails:count,
+                totalPages: Math.ceil(count / limit),
+                currentPage: page,
+                data:emails
+            })
+        } catch (error) {
+            return next(new ErrorHandler(error.message, 400));
+        }
+    }
+);

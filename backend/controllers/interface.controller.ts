@@ -24,3 +24,13 @@ export interface IMail{
     email:string;
     name:string;
 }
+
+export interface IUpdateUserInfo{
+    email?:string;
+    name?:string;
+}
+
+export interface IUpdatePassword{
+    oldPassword?:string;
+    newPassword?:string;
+}
