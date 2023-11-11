@@ -14,7 +14,10 @@ type Props = {
         name?:string,
         role?:string,
         _id?:string,
-        avatar?:string,
+        avatar?:{
+            public_id:string,
+            url:string
+        },
     },
     active:number,
     avatar:string | null,
@@ -28,7 +31,9 @@ const SidebarProfile:React.FC<Props> = ({user, active, avatar, setActive, logout
         <div className='w-full'>
             <div className={`w-full flex items-center px-3 py-4 cursor-pointer ${active === 1 ? "dark:bg-slate-800 bg-white" : "bg-transparent"}`} onClick={()=>setActive(1)}>
                 <Image 
-                    src = {user.avatar || defaultAvatar} alt='avatar'
+                    src={user.avatar ? user?.avatar?.url : defaultAvatar} alt='avatar'
+                    width={40}
+                    height={40}
                     className='w-[20px] h-[20px] 800px:w-[30px] 800px:h-[30px] cursor-pointer rounded-full' />
                     <h5 className='pl-2 800px:block hidden font-Poppins dark:text-white light:text-black'>
                         My Account

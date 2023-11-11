@@ -14,7 +14,7 @@ const page = () => {
                 description='Kinh nghiệm 2 năm trong lĩnh vực Social Media Marketing, hiện đang là Project Manager tại 1 công ty Canada, từng là Social Media Executive tại Zing News và sỡ hữu hơn 140K followers trên các kênh Social'
                 keywords='Social Media Marketing'
             />
-            <div className='flex h-[100vh]'>
+            <div className='flex h-full-screen'>
                 <div className='1500px:w-[16%] w-1/5'>
                     <AdminSidebar />
                 </div>

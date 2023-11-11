@@ -91,7 +91,7 @@ const AdminSidebar = () => {
                         !isCollapsed && (
                             <Box mb="25px" mt="15px">
                                 <Box display="flex" justifyContent="center" alignItems="center" >
-                                    <Image style={{ cursor: "pointer", borderRadius: "50%", border: "3px solid #5b5fe6", width: "50px" }} src={user?.avatar ? user.avatar : defaultAvatar} alt='avatar' height={50} width={50} />
+                                    <Image style={{ cursor: "pointer", borderRadius: "50%", border: "3px solid #5b5fe6", width: "50px" }} src={user?.avatar ? user?.avatar?.url : defaultAvatar} alt='avatar' height={50} width={50} />
                                 </Box>
                                 <Box textAlign="center">
                                     <Typography variant='h4' className='!text-[20px] text-black dark:text-[#ffffffc1]' sx={{ m: "10px 0 0 0 " }}>

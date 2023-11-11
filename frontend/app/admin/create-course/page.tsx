@@ -1,5 +1,5 @@
 "use client"
-import CreateCourse from '@/app/components/Admin/Courese/Create-Course';
+import CreateCourse from '@/app/components/Admin/Courses/Create-Course';
 import AdminSidebar from '@/app/components/Admin/Sidebar/AdminSidebar';
 import DashboardHero from '@/app/components/Admin/Sidebar/DashboardHero';
 import AdminProtects from '@/app/hooks/adminProtects';
@@ -15,7 +15,7 @@ const page = () => {
                     description='Kinh nghiệm 2 năm trong lĩnh vực Social Media Marketing, hiện đang là Project Manager tại 1 công ty Canada, từng là Social Media Executive tại Zing News và sỡ hữu hơn 140K followers trên các kênh Social'
                     keywords='Social Media Marketing'
                 />
-                <div className='flex h-[100vh]'>
+                <div className='flex'>
                     <div className='1500px:w-[16%] w-1/5'>
                         <AdminSidebar />
                     </div>

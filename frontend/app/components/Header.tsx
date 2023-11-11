@@ -12,7 +12,7 @@ import Sign_Up from './Auth/Sign_Up';
 import Verification from './Auth/Verification';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
-import avatar from '../../public/default_avatar.png'
+import defaultAvatar from '../../public/default_avatar.png'
 
 type Props = {
     open:boolean;
@@ -74,8 +74,8 @@ const Header:FC<Props> = ({open,setOpen,activeItem,route,setRoute}) => {
                            {
                             user ? 
                             <>
-                                <Link href={'/profile'}>
-                                    <Image src={user?.avatar ? user?.avatar : avatar} alt='avatar' height={20} width={20}/>
+                                <Link href={'/profile'} className='border-[2px] border-[#37a39a] rounded-full'>
+                                    <Image src={user.avatar ? user?.avatar?.url : defaultAvatar} alt='avatar' height={20} width={20}/>
                                 </Link>
 
                             </> : 

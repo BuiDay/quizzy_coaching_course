@@ -7,7 +7,10 @@ interface IUser{
     name?:string,
     role?:string,
     _id?:string,
-    avatar?:string,
+    avatar?: {
+        public_id: string,
+        url: string
+    },
 }
 
 interface IinitialState{

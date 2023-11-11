@@ -4,6 +4,7 @@ import {useLogoutQuery} from '../../../redux/features/auth/authApi'
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import ProfileInfo from './ProfileInfo';
+import ChangePassword from './ChangePassword';
 
 type IProps = {
     user:{
@@ -13,7 +14,10 @@ type IProps = {
         name?:string,
         role?:string,
         _id?:string,
-        avatar?:string,
+        avatar?: {
+            public_id: string,
+            url: string
+        },
     }
 }
 
@@ -47,7 +51,7 @@ const Profile:FC<IProps> = ({user}) => {
     }
 
     return (
-        <div className='w-[85%] flex mx-auto mt-[80px]'>
+        <div className='w-[85%] h-[82vh] flex mx-auto mt-[80px] dark:text-white text-black'>
             <div className={`w-[60px] 800px:w-[310px] h-[450px] dark:bg-slate-900 white bg-opacity-90 border dark:border-[#ffffff1d] border-black overflow-hidden rounded-[5px] shadow-sm sticky ${scroll ? "top-[120px]" : "top-[30px]"} left-[30px]}`}>
                 <SidebarProfile 
                     user = {user}
@@ -60,6 +64,9 @@ const Profile:FC<IProps> = ({user}) => {
             </div>
             {
                 active === 1 && <div className='w-[75%] h-full bg-transparent'> <ProfileInfo avatar={avatar} user={user} /></div>
+            }
+             {
+                active === 2 && <div className='w-[75%] h-full bg-transparent'> <ChangePassword/></div>
             }
         </div>
     );

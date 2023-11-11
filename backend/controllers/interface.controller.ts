@@ -34,3 +34,7 @@ export interface IUpdatePassword{
     oldPassword?:string;
     newPassword?:string;
 }
+
+export interface IUpdateAvatar{
+    avatar:string
+}
