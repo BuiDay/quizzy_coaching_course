@@ -316,7 +316,7 @@
   dependencies:
     "@babel/runtime" "^7.23.2"
 
-"@mui/material@^5.0.0", "@mui/material@^5.14.15":
+"@mui/material@^5.0.0", "@mui/material@^5.14.15", "@mui/material@^5.4.1":
   "integrity" "sha512-W4zZ4vnxgGk6/HqBwgsDHKU7x2l2NhX+r8gAwfg58Rhu3ikfY7NkIS6y8Gl3NkATc4GG1FNaGjjpQKfJx3U6Jw=="
   "resolved" "https://registry.npmjs.org/@mui/material/-/material-5.14.16.tgz"
   "version" "5.14.16"
@@ -353,7 +353,7 @@
     "csstype" "^3.1.2"
     "prop-types" "^15.8.1"
 
-"@mui/system@^5.14.16":
+"@mui/system@^5.14.16", "@mui/system@^5.4.1":
   "integrity" "sha512-uKnPfsDqDs8bbN54TviAuoGWOmFiQLwNZ3Wvj+OBkJCzwA6QnLb/sSeCB7Pk3ilH4h4jQ0BHtbR+Xpjy9wlOuA=="
   "resolved" "https://registry.npmjs.org/@mui/system/-/system-5.14.16.tgz"
   "version" "5.14.16"
@@ -381,6 +381,17 @@
     "@types/prop-types" "^15.7.9"
     "prop-types" "^15.8.1"
     "react-is" "^18.2.0"
+
+"@mui/x-data-grid@^6.18.1":
+  "integrity" "sha512-ibsrWwzM2lRRWB1xs/eop63kaxlXH/qar1S1rQx3fycJiYvK6fsM72jsScBNRlRZQQwRVSGI0ZPBsOZ+/tg7Qw=="
+  "resolved" "https://registry.npmjs.org/@mui/x-data-grid/-/x-data-grid-6.18.1.tgz"
+  "version" "6.18.1"
+  dependencies:
+    "@babel/runtime" "^7.23.2"
+    "@mui/utils" "^5.14.16"
+    "clsx" "^2.0.0"
+    "prop-types" "^15.8.1"
+    "reselect" "^4.1.8"
 
 "@next/env@13.5.4":
   "integrity" "sha512-LGegJkMvRNw90WWphGJ3RMHMVplYcOfRWf2Be3td3sUa+1AaxmsYyANsA+znrGCBjXJNi4XAQlSoEfUxs/4kIQ=="

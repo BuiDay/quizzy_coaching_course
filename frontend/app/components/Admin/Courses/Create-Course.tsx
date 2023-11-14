@@ -6,6 +6,7 @@ import CourseContent from './CourseContent';
 import CourseReview from './CourseReview';
 import { useCreateCourseMutation } from '@/redux/features/courses/coursesApi';
 import toast from 'react-hot-toast';
+import Loading from '../../Loading/Loading';
 
 type Props = {
 
@@ -13,7 +14,7 @@ type Props = {
 
 const CreateCourse = (props: Props) => {
     const [active, setActive] = useState(0);
-    const [CreateCourse, {isLoading, isSuccess,error}] = useCreateCourseMutation()
+    const [createCourse, {isLoading, isSuccess,error}] = useCreateCourseMutation()
     
     useEffect(()=>{
         if(isSuccess){
@@ -71,11 +72,10 @@ const CreateCourse = (props: Props) => {
        setCourseData(data)
     } 
     const handleCreateCourse = async () => {
-        await CreateCourse(courseData)
+        console.log(courseData)
+        await createCourse({data:courseData})
     }
 
-    console.log(courseData)
-    
     return (
         <div className='w-full flex min-h-screen'>
             <div className='w-[80%]'>
@@ -121,6 +121,10 @@ const CreateCourse = (props: Props) => {
                             handleCreateCourse={handleCreateCourse}
                         />
                     )
+                }
+
+                {
+                    isLoading && <Loading/>
                 }
                 
             </div>

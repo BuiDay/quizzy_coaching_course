@@ -44,7 +44,8 @@ const CourseReview:React.FC<Props> = ({active,setActive,courseData,handleCreateC
 
     const handleNext = () => {
         let checkNull = false;
-        setActive(active + 1)
+        setActive(active + 1);
+        handleCreateCourse(); 
     }
 
     return (

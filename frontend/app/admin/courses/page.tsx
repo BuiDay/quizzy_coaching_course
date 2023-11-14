@@ -1,4 +1,5 @@
 "use client"
+import AllCourses from '@/app/components/Admin/Courses/AllCourses';
 import AdminSidebar from '@/app/components/Admin/Sidebar/AdminSidebar';
 import DashboardHero from '@/app/components/Admin/Sidebar/DashboardHero';
 import AdminProtects from '@/app/hooks/adminProtects';
@@ -20,6 +21,7 @@ const page = () => {
                     </div>
                     <div className='w-[85%]'>
                         <DashboardHero />
+                        <AllCourses />
                     </div>
                 </div>
             </div>
