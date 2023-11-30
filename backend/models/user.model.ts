@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken'
 const emailRegexPattern :RegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 export interface IUser extends Document{
+    _id:string
     name:string;
     email:string;
     password:string;

@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 
 interface IHeadProps{
-    title:string,
-    description:string;
-    keywords:string;
+    title?:string,
+    description?:string;
+    keywords?:any;
 }
 
 const Heading:FC<IHeadProps> = ({title,description,keywords}) => {

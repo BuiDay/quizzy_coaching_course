@@ -267,6 +267,7 @@ export const updateAvatar = CatchAsyncError(
                     };
                 }
             }
+            
             await user?.save();
             await redis.set(userId,JSON.stringify(user));
             res.status(200).json({

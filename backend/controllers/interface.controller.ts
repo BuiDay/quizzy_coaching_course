@@ -38,3 +38,27 @@ export interface IUpdatePassword{
 export interface IUpdateAvatar{
     avatar:string
 }
+
+export interface IAddQuestionData{
+    question:string;
+    courseId:string;
+    contentId:string;
+}
+
+export interface IComment extends Document{
+    user?: object,
+    question?: string,
+    questionReplies?: IComment[],
+}
+
+export interface IAddAnswerData{
+    answer:string,
+    courseId:string,
+    contentId:string,
+    questionId:string
+}
+
+export interface ICreateOrder{
+    courseId:string;
+    payment_info:object
+}
