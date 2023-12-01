@@ -42,16 +42,16 @@ export const generateLastDateData = async <T extends Document>(model: Model<T>):
     const lastDate: DateData[] = [];
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
-    const currentMonth = 9
+    const currentMonth = 10
 
     const daysInCurrentMonth = getDaysInMonth(
         currentYear,
         currentMonth,
     );
     
-    for (let i = daysInCurrentMonth + 1; i > 0; i--) {
-        const endDate = new Date(currentDate.getFullYear(), 9, i, 23,59,59,999);
-        const startDate = new Date(currentDate.getFullYear(), 9, i, 0,0,0,0);
+    for (let i = 1; i < daysInCurrentMonth + 1; i++) {
+        const endDate = new Date(currentDate.getFullYear(), 10, i, 23,59,59,999);
+        const startDate = new Date(currentDate.getFullYear(), 10, i, 0,0,0,0);
         const dateMonthYear = endDate.toLocaleString('vn', {
             day: "numeric",
             month: "short",

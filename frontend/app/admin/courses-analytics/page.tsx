@@ -3,6 +3,7 @@ import React from 'react';
 import Heading from '../../utils/Heading';
 import AdminSidebar from '../../components/Admin/Sidebar/AdminSidebar';
 import AdminProtects from '../../hooks/adminProtects';
+import CourseAnalytics from '@/app/components/Admin/Analytics/CourseAnalytics';
 
 
 const page = () => {
@@ -19,7 +20,7 @@ const page = () => {
                     <AdminSidebar />
                 </div>
                 <div className='w-[85%]'>
-                  
+                  <CourseAnalytics />
                 </div>
             </div>
         </div>
