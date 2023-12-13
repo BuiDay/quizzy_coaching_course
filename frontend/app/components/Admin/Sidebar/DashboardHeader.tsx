@@ -6,7 +6,7 @@ import { IoMdNotificationsOutline } from "react-icons/io"
 const DashboardHeader = () => {
     const [open, setOpen] = useState(false)
     return (
-        <div className='flex items-center justify-end p-6 fixed right-0'>
+        <div className='flex items-center justify-end p-6 fixed right-0 dark:bg-[#111C43] w-[83.7%]'>
             <ThemeSwitcher />
             <div className='relative cursor-pointer m-2' onClick={() => setOpen(!open)}>
                 <IoMdNotificationsOutline className="text-2xl cursor-pointer dark:text-white text-black" />

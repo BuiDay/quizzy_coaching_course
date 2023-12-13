@@ -10,7 +10,7 @@ import Loader from './components/Loader/Loader'
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300","400", "500", "600", "700","900"],
   variable: "--font-Poppins"
 })
 
@@ -36,7 +36,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='dark'>
-      <body className={`${poppins.variable} ${josefin.variable} bg-no-repeat !bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-black duration-300`}>
+      {/* !bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-black */}
+      <body className={`${poppins.variable} ${josefin.variable} bg-no-repeat duration-300`}>
         <Providers>
           <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
             <Custom> {children}</Custom>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar';
 import { useSelector } from 'react-redux';
-import { ArrowForwardIosIcon , ArrowBackIosIcon , BarChartOutlinedIcon, HomeOutlinedIcon ,SettingsIcon ,MapOutlinedIcon ,GroupsIcon ,ManageHistoryIcon ,ReceiptOutlinedIcon ,VideoCallIcon ,OndemandVideoIcon ,WebIcon ,QuizIcon ,WysiwygIcon ,PeopleOutlinedIcon } from "./Icon";
+import { ArrowForwardIosIcon , ArrowBackIosIcon , BarChartOutlinedIcon, HomeOutlinedIcon ,SettingsIcon ,MapOutlinedIcon ,GroupsIcon ,ManageHistoryIcon ,ReceiptOutlinedIcon ,VideoCallIcon ,OndemandVideoIcon ,WebIcon,ContactMailIcon ,QuizIcon ,WysiwygIcon ,PeopleOutlinedIcon } from "./Icon";
 import defaultAvatar from '../../../../public/default_avatar.png'
 import Image from 'next/image';
 
@@ -119,6 +119,7 @@ const AdminSidebar = () => {
                             {!isCollapsed && "Content"}
                         </Typography>
                         <Item title='Create Course' to="/admin/create-course" icon={<VideoCallIcon  />} selected={selected} setSelected={setSelected} />
+                        <Item title='Email Marketing' to="/admin/email-marketing" icon={<ContactMailIcon  />} selected={selected} setSelected={setSelected} />
                         <Item title='Live Course' to="/admin/courses" icon={<OndemandVideoIcon  />} selected={selected} setSelected={setSelected} />
                         <Typography variant='h5' sx={{ m: "15px 0 5px 0px" }} className='!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]'>
                             {!isCollapsed && "Customization"}

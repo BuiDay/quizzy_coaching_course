@@ -52,7 +52,7 @@ const Header:FC<Props> = ({open,setOpen,activeItem,route,setRoute}) => {
                 <div className='w-[95%] 800px:w-[92%] m-auto h-full'>
                     <div className='w-full h-[80px] flex items-center justify-between p-3'>
                         <div>
-                            <Link href={"/"} className={`text-[25px] font-Poppins font-[500] text-black dark:text-white`}>
+                            <Link rel="xsa" href={"/"} className={`text-[25px] font-Poppins font-[500] text-black dark:text-white`}>
                                 Quizzy Coaching Course
                             </Link>
                         </div>
@@ -74,7 +74,7 @@ const Header:FC<Props> = ({open,setOpen,activeItem,route,setRoute}) => {
                            {
                             user ? 
                             <>
-                                <Link href={'/profile'} className='border-[2px] border-[#37a39a] rounded-full'>
+                                <Link rel="xsa" href={'/profile'} className='border-[2px] border-[#37a39a] rounded-full'>
                                     <Image src={user.avatar ? user?.avatar?.url : defaultAvatar} alt='avatar' height={20} width={20}/>
                                 </Link>
 

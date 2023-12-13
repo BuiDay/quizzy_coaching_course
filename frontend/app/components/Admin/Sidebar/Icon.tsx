@@ -13,6 +13,7 @@ import BarChartOutlinedIcon  from "@mui/icons-material/BarChartOutlined"
 import MapOutlinedIcon  from "@mui/icons-material/MapOutlined"
 import ManageHistoryIcon  from "@mui/icons-material/ManageHistory"
 import SettingsIcon  from "@mui/icons-material/Settings"
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 
 export {
     ArrowForwardIosIcon,
@@ -29,5 +30,6 @@ export {
     BarChartOutlinedIcon ,
     MapOutlinedIcon ,
     ManageHistoryIcon ,
-    SettingsIcon 
+    SettingsIcon ,
+    ContactMailIcon
 }

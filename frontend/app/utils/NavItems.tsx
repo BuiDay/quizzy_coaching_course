@@ -36,7 +36,7 @@ const NavItems: React.FC<Props> = ({ isMobile, activeItem }) => {
                 {
                     navItemsData && navItemsData.map((item, index) => {
                         return (
-                            <Link href={item.url} key={index} passHref>
+                            <Link rel="xsa" href={item.url} key={index} passHref>
                                 <span className={`${activeItem === index
                                     ? "dark:text-[#37a39a] text-[crimson]"
                                     : "dark:text-white text-black"
@@ -55,7 +55,7 @@ const NavItems: React.FC<Props> = ({ isMobile, activeItem }) => {
                             {
                                 navItemsData && navItemsData.map((item, index) => {
                                     return (
-                                        <Link href="/" key={index} passHref>
+                                        <Link rel="xsa" href="/" key={index} passHref>
                                             <span className={`${activeItem === index
                                                 ? "dark:text-[#37a39a] text-[crimson]"
                                                 : "dark:text-white text-black"

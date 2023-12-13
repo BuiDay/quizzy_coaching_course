@@ -31,11 +31,13 @@ const sendMail = async (options: EmailOption): Promise<void> => {
         const html:string = await ejs.renderFile(templatePath,data);
         const mailOptions = {
             from:process.env.SMTP_MAIL,
-            to:email,
+            cc:email,
             subject,
             html
         }
-        await transporter.sendMail(mailOptions);
+        await transporter.sendMail(mailOptions,()=>{
+            
+        });
     } catch (error) {
         console.log(error)
     }

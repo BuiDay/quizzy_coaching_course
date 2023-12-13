@@ -28,7 +28,7 @@ const Landing_Page = () => {
             toast.loading('Waiting...');
             const {data} = await axios({
                 method: 'post',
-                url: '/api/v1/collection-mail',
+                url: 'http://localhost:8888/api/v1/collection-mail',
                 data: 
                     values
               })
