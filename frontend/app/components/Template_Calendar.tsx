@@ -31,7 +31,7 @@ const Template_Calendar = () => {
             toast.loading('Waiting...');
             const { data } = await axios({
                 method: 'post',
-                url: 'http://localhost:8888/api/v1/collection-mail',
+                url: '/api/v1/collection-mail',
                 data:
                     values
             })
@@ -55,20 +55,20 @@ const Template_Calendar = () => {
             <PanelSocial />
             <Toaster position="bottom-center" reverseOrder={false} />
             <div className='background-overlay bg-pattern absolute left-0 top-0 w-100 h-100'></div>
-            <div className='text-[#2B3235] 1500px:px-[200px] 1000px:px-[100px] px-[50px] 800px:mb-[25px] mb-[10px]'>
+            <div className='text-[#2B3235] 1500px:px-[120px] 1000px:px-[80px] px-[50px] 800px:mb-[25px] mb-[10px]'>
                 <LazyMotion features={domAnimation}>
                     <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                         transition={{ duration: 2, delay: 0.5 }}
                     >
-                        <h1 className='1100px:text-[48px] 800px:text-[40px] text-[32px] text-left font-extrabold'>Đăng kí nhận <br /> <span className='text-[#FC61A7]'>Template Content Calendar </span>miễn phí</h1>
+                        <h1 className='1100px:text-[40px] 800px:text-[34px] text-[28px] text-left font-extrabold'>Đăng kí nhận <br /> <span className='text-[#FC61A7]'>Template Content Calendar </span>miễn phí</h1>
                         <div className='flex items-center gap-1 w-fit sub-item'>
                             <FaRegCircle size={14} className="sub-icon__RegCircle " />
-                            <Link href={"/Content-Creation"} className='text-[14px] text-left font-light w-fit' style={{ borderBottom: "1px solid gray" }}>Nhận Template Content Creation Miễn Phí</Link>
+                            <Link href={"/content-creation"} className='text-[14px] text-left font-light w-fit' style={{ borderBottom: "1px solid gray" }}>Template Content Creation Miễn Phí</Link>
                         </div>
                     </m.div>
                 </LazyMotion>
             </div>
-            <div className='w-full h-full flex 800px:flex-row flex-col items-center justify-center 800px:justify-start gap-[-20px] 800px:pr-[50px]'>
+            <div className='w-full h-full flex 800px:flex-row flex-col items-center justify-center 800px:justify-start 800px:pr-[30px]'>
                 <motion.div
                     initial={{ height: 1, y: 0 }}
                     animate={{ height: "auto", y: 0 }}
@@ -82,7 +82,7 @@ const Template_Calendar = () => {
                         >
                             <div className='absolute bg-[white] 800px:block hidden w-[107%] h-full top-0 left-0 border-[3px] border-[#2B3235]' style={{ borderLeft: "2px solid white", borderTopRightRadius: "10px", borderBottomRightRadius: "10px" }}></div>
                         </motion.div>
-                        <div className=' relative z-20 w-full 800px:text-[22px] text-[14px] flex flex-col gap-4 text-justify 1500px:pl-[200px] 1000px:pl-[100px] px-[50px] 800px:py-[30px] py-[20px] text-[#2B3235]'>
+                        <div className=' relative z-20 w-full 800px:text-[18px] text-[14px] flex flex-col gap-4 text-justify 1500px:px-[120px] 1000px:px-[80px] px-[50px] 800px:py-[30px] py-[20px] text-[#2B3235]'>
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
