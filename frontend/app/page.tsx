@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Landing_Page from './components/Landing_Page';
 import Hero from './components/Route/Hero';
 import HeroV1 from './components/Route/HeroV1';
+import Template_Calendar from './components/Template_Calendar';
 
 interface IProps { }
 
@@ -14,7 +15,7 @@ const Page: FC<IProps> = (props) => {
   const [route, setRoute] = useState("Login");
 
   return (
-    <div className=''>
+    <>
       <Heading
         title={'Quizzy Coaching Course'}
         description={'Kinh nghiệm 2 năm trong lĩnh vực Social Media Marketing, hiện đang là Project Manager tại 1 công ty Canada, từng là Social Media Executive tại Zing News và sỡ hữu hơn 140K followers trên các kênh Social'}
@@ -29,9 +30,10 @@ const Page: FC<IProps> = (props) => {
       /> */}
 
       {/* <Landing_Page />  */}
-      {/* <Hero /> */}
-      <HeroV1 />
-    </div>
+      <Template_Calendar/>
+      {/* <Hero />
+      <HeroV1 /> */}
+    </>
   );
 };
 

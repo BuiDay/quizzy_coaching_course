@@ -91,15 +91,39 @@ input[type="submit"]:disabled {
   background: #dddddd;
 }
 
-/* .input-ld{
+input[type=text]{
+  background-color: white;
+}
+
+input[type=email]{
+  background-color: white;
+}
+
+input::placeholder {
+  color: #2B3235;
+  font-weight: 600;
+}
+
+.input-ld{
   width:100% ;
-  border: 1px salmon solid;
+  border: 3px #2B3235 solid;
   padding: 10px 20px;
   outline: none;
-  color: white;
+  color: 2B3235;
   border-radius: 10px;
   font-weight: 600;
 }
+
+input:-internal-autofill-selected {
+    /* appearance: menulist-button;
+    background-image: none !important;
+    background-color: #191919 !important; */
+    color: white !important;
+}
+.error{
+  color: red;
+}
+/* 
 
 .button-ld{
   transition: scale 0.4s;
@@ -113,23 +137,75 @@ input[type="submit"]:disabled {
 button:active {
   scale: 1.06;
 }
+ */
 
-input[type=text]{
-  background-color: #fc61a7;
+ .button-ld{
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+ }
+
+
+ /* .button-ld:before{
+  content: "";
+  position: absolute;
+  top:6px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 12px);
+  background: #e5e7eb;
+  transition: 0.5s ease-in-out;
+  transform: scaleY(1);
+  border-radius: 20px;
+ } */
+/* 
+ .button-ld::after{
+  content: "";
+  position: absolute;
+  top:-2px;
+  left: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% + 4px);
+  background: #e5e7eb;
+  transition: 0.5s ease-in-out;
+  transform: scaleX(1);
+  border-radius: 20px;
+ } */
+
+ /* .button-ld:hover:after{
+  transform: scaleX(0);
+ }
+
+ .button-ld:hover:before{
+  transform: scaleY(0);
+ } */
+
+
+ .button-ld span{
+  position: relative;
+  z-index: 10;
+ }
+
+.bg-pattern {
+  background-image: url(../public/bg-2.svg);
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  opacity: 1;
 }
-
-input[type=email]{
-  background-color: #fc61a7;
+.background-overlay{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
 }
-
-input::placeholder {
-  color: white;
-  font-weight: 600;
-}
-
-.error{
-  color: red;
-} */
 
 .typewriter h2 {
   color: #fff;
@@ -176,7 +252,7 @@ input::placeholder {
 }
 
 .hero__major-title {
-  background: linear-gradient(to right, #f9a8d4 0%, #ec4899 100%);
+  background: linear-gradient(to right, #f8bbdd 0%, #ee1280 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -207,7 +283,7 @@ input::placeholder {
   z-index: 10;
 }
 
-.cover-bg-img::before{
+.cover-bg-img::before {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -218,16 +294,46 @@ input::placeholder {
   left: 0;
 }
 
-.prev{
+.prev {
   position: absolute;
   bottom: 0px;
   left: 0;
   z-index: 50;
 }
 
-.next{
+.next {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 50;
+}
+
+.social-item .social-icon{
+  scale:calc(1);
+  transition: 0.5s scale;
+}
+
+.social-item:hover .social-icon{
+  scale:calc(0);
+  transition: 0.5s scale;
+}
+
+.social-item:hover .social-title{
+  opacity: 1;
+  transition: 0.5s all;
+  transform: translateX(0px);
+}
+
+.social-title{
+  opacity: 0;
+  transition: 0.5s all;
+  transform: translateX(20px);
+}
+
+.sub-item{
+  transition: 0.45s cubic-bezier(0.65, 0, 0.076, 1) all ;
+}
+
+.sub-item:hover{
+  padding-left: 50px;
 }

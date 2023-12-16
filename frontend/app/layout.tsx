@@ -7,6 +7,7 @@ import { Providers } from './Provider'
 import React from 'react'
 import { useLoadUserQuery } from '@/redux/features/api/apiSlice'
 import Loader from './components/Loader/Loader'
+import { Metadata } from 'next'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -16,7 +17,7 @@ const poppins = Poppins({
 
 const josefin = Josefin_Sans({
   subsets: ['latin'],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300","400", "500", "600", "700"],
   variable: "--font-Josefin"
 })
 
@@ -40,8 +41,8 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${josefin.variable} bg-no-repeat duration-300`}>
         <Providers>
           <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-            <Custom> {children}</Custom>
-            <Toaster position='top-center' reverseOrder={false} />
+            {/* <Custom> {children}</Custom> */}
+            {children}
           </ThemeProvider>
         </Providers>
       </body>
@@ -49,13 +50,13 @@ export default function RootLayout({
   )
 }
 
-const Custom:React.FC<{children:React.ReactNode}> = ({children}) => {
-    const {isLoading} = useLoadUserQuery({});
-    return (
-      <>
-        {
-          isLoading ? <Loader /> : <>{children}</>
-        }
-      </>
-    )
-}
+// const Custom:React.FC<{children:React.ReactNode}> = ({children}) => {
+//     const {isLoading} = useLoadUserQuery({});
+//     return (
+//       <>
+//         {
+//           isLoading ? <Loader /> : <>{children}</>
+//         }
+//       </>
+//     )
+// }
