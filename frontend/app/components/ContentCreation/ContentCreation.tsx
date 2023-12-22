@@ -52,7 +52,7 @@ const ContentCreation = () => {
 
     return (
         <div className='w-full min-h-screen h-full bg-[white] 800px:pt-[20px] py-[20px]'>
-            <PanelSocial />
+            <PanelSocial color='#2B3235'/>
             <Toaster position="bottom-center" reverseOrder={false} />
             <div className='background-overlay bg-pattern absolute left-0 top-0 w-100 h-100'></div>
             <div className='text-[#2B3235] 1500px:px-[120px] 1000px:px-[80px] px-[50px] 800px:mb-[25px] mb-[10px]'>

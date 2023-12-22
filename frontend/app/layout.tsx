@@ -4,10 +4,12 @@ import { Josefin_Sans, Poppins } from 'next/font/google'
 import { ThemeProvider } from './utils/theme-provider'
 import { Toaster } from 'react-hot-toast'
 import { Providers } from './Provider'
-import React from 'react'
+import React, { use, useEffect, useState } from 'react'
 import { useLoadUserQuery } from '@/redux/features/api/apiSlice'
 import Loader from './components/Loader/Loader'
 import { Metadata } from 'next'
+import LoaderPercent from './components/Common/LoaderPercent'
+import Footer from './components/Footer'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -41,8 +43,11 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${josefin.variable} bg-no-repeat duration-300`}>
         <Providers>
           <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-            {/* <Custom> {children}</Custom> */}
-            {children}
+            <CustomV1>
+              {children}
+              <Footer />
+            </CustomV1>
+            {/* {children} */}
           </ThemeProvider>
         </Providers>
       </body>
@@ -60,3 +65,31 @@ export default function RootLayout({
 //       </>
 //     )
 // }
+
+const CustomV1:React.FC<{children:React.ReactNode}> = ({children}) => {
+
+  const [count, setCount] = useState<number>(0)
+
+
+  useEffect(()=>{
+    const counter = setInterval (() => {
+      if(count < 100) {
+        setCount((n)=>n +1)
+      }
+      if(count > 100){
+        setCount(100)
+      }
+    },7)
+    return () => {
+      clearInterval(counter)
+    }
+  },[count])
+
+  return (
+    <>
+      {
+        count < 100 ? <LoaderPercent count={count}/> : <>{children}</>
+      }
+    </>
+  )
+}

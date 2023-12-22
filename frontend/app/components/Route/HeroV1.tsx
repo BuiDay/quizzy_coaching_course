@@ -11,15 +11,10 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 
 const HeroV1 = () => {
-
-
     return (
-        <div className='h-screen md:p-[90px] p-0 w-full'>
+        <div className='h-screen md:p-[90px] md:pt-0 p-0 w-full'>
             <div className='h-full w-full'>
                 <Swiper
-                    pagination={{
-                        type: 'fraction',
-                    }}
                     navigation={{
                         prevEl: '.prev',
                         nextEl: '.next',
@@ -68,22 +63,18 @@ const HeroV1 = () => {
                     </SwiperSlide>
 
                 </Swiper>
-                <div>
-                    <div className="prev text-white">
-
-                        <svg className="arrow v-middle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.214 23.057">
-                            <g fill="white" stroke-linecap="square" stroke-width="1">
-                                <path d="M23.528 11.685h-20M16.685 19.528l8-8-8-8"></path>
-                            </g>
-                        </svg>
-                        <svg className="circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <g className="circle-wrap" fill="white" stroke-width="1" stroke-linejoin="round" stroke-miterlimit="10">
-                                <circle cx="12" cy="12" r="10.5"></circle>
-                            </g>
-                        </svg>
-
+                <div className='flex justify-between items-center mt-1'>
+                    <div className="prev text-white cursor-pointer">
+                        <div className='h-[40px] w-[40px]'>
+                            <GoArrowLeft size={40} />
+                        </div>
                     </div>
-                    <div className="next text-white">
+                    <div className='side-fractions flex items-end justify-center'>
+                        <div className='text-[38px]'>1</div>
+                        <div className='text-[28px]'>/</div>
+                        <div className='text-[28px]'>3</div>
+                    </div>
+                    <div className="next text-white cursor-pointer">
                         <div className='h-[40px] w-[40px]'>
                             <GoArrowRight size={40} />
                         </div>
@@ -91,9 +82,7 @@ const HeroV1 = () => {
                 </div>
 
             </div>
-
         </div>
-
     );
 };
 
