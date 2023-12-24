@@ -372,3 +372,15 @@ button:active {
   right: -100px;
   position: absolute;
 }
+
+.service-items__number{
+  position: absolute;
+  font-size: 120px;
+  top: -50px;
+  font-weight: 800;
+  right: 0;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff1a;
+}
+

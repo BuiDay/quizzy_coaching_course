@@ -54,7 +54,7 @@ const Header:FC<Props> = ({open,setOpen,activeItem,route,setRoute}) => {
                     <div className='w-full h-[80px] flex items-center justify-between p-3'>
                         <div>
                             <Link rel="xsa" href={"/"} className={`text-[25px] font-Poppins font-[500] text-black dark:text-white`}>
-                                Quizzy Coaching Course
+                                Quizzy Học Marketing
                             </Link>
                         </div>
                         <div className='flex items-center'>

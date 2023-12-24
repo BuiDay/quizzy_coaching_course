@@ -7,6 +7,8 @@ import Hero from './components/Route/Hero';
 import HeroV1 from './components/Route/HeroV1';
 import Template_Calendar from './components/Template_Calendar';
 import PanelSocial from './components/Common/PanelSocial';
+import OurService from './components/Route/OurService';
+import Testimonials from './components/Route/Testimonials';
 
 interface IProps { }
 
@@ -35,6 +37,8 @@ const Page: FC<IProps> = (props) => {
       {/* <Hero /> */}
       <HeroV1 />
       <PanelSocial color="#fff"/>
+      <OurService />
+      <Testimonials />
     </>
   );
 };

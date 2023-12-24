@@ -13,7 +13,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 const HeroV1 = () => {
     return (
         <div className='h-screen md:p-[90px] md:pt-0 p-0 w-full'>
-            <div className='h-full w-full'>
+            <div className='h-full w-full bg-[#191919]'>
                 <Swiper
                     navigation={{
                         prevEl: '.prev',
