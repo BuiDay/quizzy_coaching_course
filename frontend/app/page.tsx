@@ -9,6 +9,7 @@ import Template_Calendar from './components/Template_Calendar';
 import PanelSocial from './components/Common/PanelSocial';
 import OurService from './components/Route/OurService';
 import Testimonials from './components/Route/Testimonials';
+import Ebook from './components/Route/Ebook';
 
 interface IProps { }
 
@@ -36,6 +37,7 @@ const Page: FC<IProps> = (props) => {
       {/* <Template_Calendar/> */}
       {/* <Hero /> */}
       <HeroV1 />
+      <Ebook />
       <PanelSocial color="#fff"/>
       <OurService />
       <Testimonials />
