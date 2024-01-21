@@ -8,7 +8,7 @@ type Props = {
 
 const PanelSocial:React.FC<Props> = ({color}) => {
     return (
-        <div className='fixed bottom-[70px] right-[20px] z-50'>
+        <div className='fixed bottom-[70px] right-[10px] z-50'>
             <div className='flex flex-col gap-2 justify-center items-center'>
                 <div className={`flex flex-col gap-6 justify-center items-center text-[${color}]`}>
                     <Link href={"https://www.facebook.com/quizzystudytime"} target='_blank' rel='noopener noreferrer' className='cursor-pointer flex relative social-item '>
@@ -24,7 +24,7 @@ const PanelSocial:React.FC<Props> = ({color}) => {
                         <div className='social-icon'><FaInstagram size={20} /></div>
                     </Link>
                 </div>
-                <div className={`w-[1px] h-[50px] bg-[#fff]`}></div>
+                <div className={`w-[1px] h-[50px] bg-[${color}]`}></div>
                 <div className='' style={{ writingMode: "vertical-rl" }}>
                     <span className={`text-[${color}] uppercase font-semibold text-[14px] tracking-widest`}>Follow Us</span>
                 </div>

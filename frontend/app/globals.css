@@ -91,22 +91,22 @@ input[type="submit"]:disabled {
   background: #dddddd;
 }
 
-input[type=text]{
+input[type="text"] {
   background-color: white;
 }
 
-input[type=email]{
+input[type="email"] {
   background-color: white;
 }
 
 input::placeholder {
-  color: #2B3235;
+  color: #2b3235;
   font-weight: 600;
 }
 
-.input-ld{
-  width:100% ;
-  border: 3px #2B3235 solid;
+.input-ld {
+  width: 100%;
+  border: 3px #2b3235 solid;
   padding: 10px 20px;
   outline: none;
   color: 2B3235;
@@ -115,12 +115,12 @@ input::placeholder {
 }
 
 input:-internal-autofill-selected {
-    /* appearance: menulist-button;
+  /* appearance: menulist-button;
     background-image: none !important;
     background-color: #191919 !important; */
-    color: white !important;
+  color: white !important;
 }
-.error{
+.error {
   color: red;
 }
 /* 
@@ -139,19 +139,18 @@ button:active {
 }
  */
 
- .button-ld{
-    position: relative;
-    font-size: 14px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 20px;
-    outline: none;
-    border: none;
- }
+.button-ld {
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
 
-
- /* .button-ld:before{
+/* .button-ld:before{
   content: "";
   position: absolute;
   top:6px;
@@ -177,7 +176,7 @@ button:active {
   border-radius: 20px;
  } */
 
- /* .button-ld:hover:after{
+/* .button-ld:hover:after{
   transform: scaleX(0);
  }
 
@@ -185,26 +184,25 @@ button:active {
   transform: scaleY(0);
  } */
 
-
- .button-ld span{
+.button-ld span {
   position: relative;
   z-index: 10;
- }
+}
 
 .bg-pattern {
   background-image: url(../public/bg-2.svg);
   background-position: center center;
-  background-repeat:no-repeat;
-  background-size:cover;
-  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
 }
-.background-overlay{
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    pointer-events: none;
+.background-overlay {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
 }
 
 .typewriter h2 {
@@ -252,7 +250,7 @@ button:active {
 }
 
 .hero__major-title {
-  background: linear-gradient(to right, #f8bbdd 0%, #ee1280 100%);
+  background: linear-gradient(to right, #ee1280 0%, #2b3235 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -308,37 +306,37 @@ button:active {
   z-index: 50;
 } */
 
-.social-item .social-icon{
-  scale:calc(1);
+.social-item .social-icon {
+  scale: calc(1);
   transition: 0.5s scale;
 }
 
-.social-item:hover .social-icon{
-  scale:calc(0);
+.social-item:hover .social-icon {
+  scale: calc(0);
   transition: 0.5s scale;
 }
 
-.social-item:hover .social-title{
+.social-item:hover .social-title {
   opacity: 1;
   transition: 0.5s all;
   transform: translateX(0px);
 }
 
-.social-title{
+.social-title {
   opacity: 0;
   transition: 0.5s all;
   transform: translateX(20px);
 }
 
-.sub-item{
-  transition: 0.45s cubic-bezier(0.65, 0, 0.076, 1) all ;
+.sub-item {
+  transition: 0.45s cubic-bezier(0.65, 0, 0.076, 1) all;
 }
 
-.sub-item:hover{
+.sub-item:hover {
   padding-left: 50px;
 }
 
-.side-fractions{
+.side-fractions {
   color: #fff;
 }
 
@@ -349,7 +347,8 @@ button:active {
   display: inline-block;
   position: relative;
   border: 10px solid;
-  border-color: rgba(255, 255, 255, 0.15) rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.15) rgba(255, 255, 255, 0.25)
+    rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
@@ -363,7 +362,7 @@ button:active {
   }
 }
 
-.sub-title:before{
+.sub-title:before {
   content: "";
   height: 1px;
   width: 80px;
@@ -373,7 +372,7 @@ button:active {
   position: absolute;
 }
 
-.service-items__number{
+.service-items__number {
   position: absolute;
   font-size: 120px;
   top: -50px;
@@ -384,3 +383,8 @@ button:active {
   -webkit-text-stroke-color: #ffffff1a;
 }
 
+.items-shadow {
+  box-shadow: -2px 1px 13px 0px rgba(0, 0, 0, 0.84);
+  -webkit-box-shadow: -2px 1px 13px 0px rgba(0, 0, 0, 0.84);
+  -moz-box-shadow: -2px 1px 13px 0px rgba(0, 0, 0, 0.84);
+}

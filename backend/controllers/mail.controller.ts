@@ -4,6 +4,7 @@ import ErrorHandler from "../utils/errorHandler";
 import { IMail } from "./interface.controller";
 import mailContentCreationModel from "../models/mailContentCreation.model";
 import mailModel from "../models/mail.model";
+import mailActionCTAModel from "../models/mailActionCTA.model";
 import sendMail from "../utils/sendMail";
 
 export const collectionMailContentCreation = CatchAsyncError(
@@ -20,6 +21,31 @@ export const collectionMailContentCreation = CatchAsyncError(
                 email:email,
                 subject: "[TÀI LIỆU CONTENT CREATION] từ Quizzy Học Marketing",
                 template: "activation-collection-mail-content-creation.ejs",
+                data:user,
+            });
+            res.status(200).json({
+                success: true,
+            })
+        } catch (error) {
+            return next(new ErrorHandler(error.message, 400));
+        }
+    }
+);
+
+export const collectionMailCTA = CatchAsyncError(
+    async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const { name, email} = req.body;
+            const isEmailExist = await mailActionCTAModel.findOne({ email });
+            if (isEmailExist) {
+                return next(new ErrorHandler("Email đã được đăng kí!", 400));
+            }
+            const user: IMail = { name, email};
+            const data  = await mailActionCTAModel.create(user);
+            await sendMail({
+                email:email,
+                subject: "[TÀI LIỆU CTA TEMPLATE] từ Quizzy Học Marketing",
+                template: "activation-collection-mail-action-cta.ejs",
                 data:user,
             });
             res.status(200).json({

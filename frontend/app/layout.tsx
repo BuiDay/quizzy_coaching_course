@@ -43,11 +43,11 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${josefin.variable} bg-no-repeat duration-300`}>
         <Providers>
           <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-            <CustomV1>
-              {children}
-              <Footer />
-            </CustomV1>
-            {/* {children} */}
+            {/* <CustomV1> */}
+              {/* {children} */}
+              {/* <Footer />
+            </CustomV1> */}
+            {children}
           </ThemeProvider>
         </Providers>
       </body>

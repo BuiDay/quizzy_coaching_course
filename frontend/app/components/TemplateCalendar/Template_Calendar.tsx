@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Calandar from "public/content-creation.png"
+import Calandar from "public/calendar.png"
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -12,11 +12,9 @@ import Link from 'next/link';
 import ModalCheckMailAddress from '../Common/Modal/ModalCheckMailAddress';
 
 
-const ContentCreation = () => {
-    
+const Template_Calendar = () => {
     const [open, setOpen] = useState(false)
     const [formValue,setFormValue] = useState({})
-
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -40,9 +38,9 @@ const ContentCreation = () => {
             toast.loading('Waiting...');
             const { data } = await axios({
                 method: 'post',
-                url: 'http://localhost:8888/api/v1/collection-mail-content-creation',
+                url: '/api/v1/collection-mail',
                 data:
-                    formValue
+                formValue
             })
             if (data.success) {
                 setOpen(false)
@@ -50,7 +48,6 @@ const ContentCreation = () => {
                 toast.dismiss();
                 toast.success('Mình đã gửi cho bạn rồi đó! Bạn kiểm tra mail nhé', {duration: 6000});
             } else {
-                setOpen(false)
                 toast.dismiss();
                 toast.error('This is an error!');
             }
@@ -72,7 +69,7 @@ const ContentCreation = () => {
                     <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                         transition={{ duration: 2, delay: 0.5 }}
                     >
-                        <h1 className='1100px:text-[40px] 800px:text-[34px] text-[28px] text-left font-extrabold'>Đăng kí nhận <br /> <span className='text-[#FC61A7]'>Template Content Creation </span> miễn phí</h1>
+                        <h1 className='1100px:text-[40px] 800px:text-[34px] text-[28px] text-left font-extrabold'>Đăng kí nhận <br /> <span className='text-[#FC61A7]'>Template Content Calendar </span>miễn phí</h1>
                         <div className='flex items-center gap-1 w-fit'>
                             <FaRegCircle size={14} className="sub-icon__RegCircle " />
                             <Link href={"/"} className='text-[14px] text-left font-light w-fit' style={{ borderBottom: "1px solid gray" }}>Nhận các Template khác Miễn Phí</Link>
@@ -80,7 +77,7 @@ const ContentCreation = () => {
                     </m.div>
                 </LazyMotion>
             </div>
-            <div className='w-full h-full flex 800px:flex-row flex-col items-center justify-center 800px:justify-start gap-[-20px] 800px:pr-[50px]'>
+            <div className='w-full h-full flex 800px:flex-row flex-col items-center justify-center 800px:justify-start 800px:pr-[30px]'>
                 <motion.div
                     initial={{ height: 1, y: 0 }}
                     animate={{ height: "auto", y: 0 }}
@@ -101,36 +98,35 @@ const ContentCreation = () => {
                                 transition={{ duration: 0.5, delay: 1 }}
                                 className=' w-full flex justify-center'
                             >
-                                <div className='max-w-[300px]'>
+                                <div className='max-w-[350px]'>
                                     <Image src={Calandar} alt='Calandar'></Image>
                                 </div>
                             </motion.div>
-
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.5, delay: 1 }}
+                            >
+                                <p>Mình đã tổng hợp <span className='text-[#FC61A7] font-bold'> 2-3 mẫu Content Calendar</span> thông dụng trong quá trình lên plan, schedule lịch đăng dành cho các bạn làm<span className='text-[#FC61A7] font-bold'> Social Media hoặc đơn giản bạn muốn quản lí lịch trình cho kênh của mình.</span></p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.5, delay: 1.5 }}
+                            >
+                                <p>Template mình tổng hợp có tích hợp cả Excel ở phần <span className='text-[#FC61A7] font-bold'>Draft Date, Published Date và End Date</span> nên bạn vui lòng điền đủ ngày để sử dụng được Calendar nhé!</p>
+                            </motion.div>
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.5, delay: 2 }}
-                            >
-                                <p>Chào bạn, cảm ơn bạn đã quan tâm đến tài liệu của mình! Mình đã tổng hợp cực kì chi tiết các<span className='text-[#FC61A7] font-bold'> CTA, HOOK, SCRIPT TEMPLATE với hơn 100 mẫu chi tiết</span> để bạn áp dụng cho tất cả các lĩnh vực.</p>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.5, delay: 2.5 }}
-                            >
-                                <p>Bên cạnh đó, mình còn <span className='text-[#FC61A7] font-bold'>BONUS</span> thêm cho bạn <span className='text-[#FC61A7] font-bold'>1 SOCIAL SCHEDULING SHEET cho 30 ideas/tháng </span>để bạn áp dụng. Tài liệu do mình tổng hợp cực kì chất lượng luôn nên bạn đừng bỏ lỡ nhé!</p>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.5, delay: 3 }}
                             >
                                 <p>Bạn vui lòng điền đúng thông tin dưới đây, mình sẽ gửi bạn thông tin template ngay lập tức nhé, bạn nhớ check mục <span className='text-[#FC61A7] font-bold'>“Spam”</span> và <span className='text-[#FC61A7] font-bold'>“Promotion”</span> giúp mình nha!</p>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                transition={{ duration: 0.5, delay: 3.5 }}
+                                transition={{ duration: 0.5, delay: 2.5 }}
                             >
                                 <p>Bạn <span className='text-[#FC61A7] font-bold'>nhớ check kĩ email trước khi bấm “Đăng kí ”</span> nha, sai email là không nhận được đâu đó!</p>
                             </motion.div>
@@ -138,12 +134,11 @@ const ContentCreation = () => {
 
                     </div>
                 </motion.div>
-
                 <div className='z-30'>
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 4 }}
+                        transition={{ duration: 0.5, delay: 3 }}
                     >
                         <div className='800px:border-[3px] border-[#2B3235] bg-[white] p-[30px] w-full rounded-xl'>
                             <form action="" className='flex flex-col gap-[1px] min-w-[300px] w-full' spellCheck="false" onSubmit={formik.handleSubmit}>
@@ -193,12 +188,10 @@ const ContentCreation = () => {
                             </form>
                         </div>
                     </motion.div>
-
                 </div>
-
             </div>
         </div>
     );
 };
 
-export default ContentCreation;
+export default Template_Calendar;

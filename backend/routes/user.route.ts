@@ -1,7 +1,7 @@
 import express from 'express';
 import { registrationUser,activateUser, loginUser,updateAvatar,logoutUser,getUserById,updateAccessToken, updateUserInfo, updatePassword } from '../controllers/user.controller';
 import { isAuthenticated } from '../middleware/isAuth';
-import { collectionMail, collectionMailContentCreation, getCollectionMail } from '../controllers/mail.controller';
+import { collectionMail, collectionMailContentCreation, getCollectionMail,collectionMailCTA } from '../controllers/mail.controller';
 const router = express.Router();
 
 router.post('/registration',registrationUser)
@@ -18,6 +18,7 @@ router.get('/get-user-by-id',isAuthenticated, getUserById)
 
 router.post('/collection-mail', collectionMail)
 router.post('/collection-mail-content-creation', collectionMailContentCreation)
+router.post('/collection-mail-action-cta', collectionMailCTA)
 
 router.get('/get-collection-mail', getCollectionMail)
 
