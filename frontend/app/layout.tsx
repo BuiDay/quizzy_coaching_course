@@ -10,6 +10,8 @@ import Loader from './components/Loader/Loader'
 import { Metadata } from 'next'
 import LoaderPercent from './components/Common/LoaderPercent'
 import Footer from './components/Footer'
+import { useRouter } from 'next/router'
+import GoogleAnalytics from './GoogleAnalytics'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -37,10 +39,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en" className='dark'>
       {/* !bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-black */}
       <body className={`${poppins.variable} ${josefin.variable} bg-no-repeat duration-300`}>
+      {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+            <GoogleAnalytics ga_id= 
+            {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+          ) : null}
         <Providers>
           <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
             {/* <CustomV1> */}
